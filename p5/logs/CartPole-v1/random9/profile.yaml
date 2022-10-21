@@ -1,0 +1,25 @@
+env:
+  name: CartPole-v1
+  pomdp: false
+  seed: 9
+  step_max: 500
+optim:
+  generation_num: 500
+  input_running_mean_std: false
+  learning_rate: 0.001
+  learning_rate_decay: 0.9999
+  maximization: true
+  name: es_openai
+  population_size: 150
+  reward_norm: false
+  reward_shaping: true
+  sigma_decay: 0.999
+  sigma_init: 0.01
+policy:
+  agent_0:
+    action_num: 2
+    add_gru: true
+    discrete_action: true
+    name: model_rnn
+    state_num: 4
+  shared_params: None

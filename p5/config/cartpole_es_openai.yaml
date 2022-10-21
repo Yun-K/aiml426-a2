@@ -1,5 +1,5 @@
 env:
-  seed: 0
+  seed: 6
   name: CartPole-v1
   step_max: 500
   pomdp: False
@@ -7,10 +7,13 @@ policy:
   agent_0:
     name: model_rnn
     add_gru: True
+    action_num: 2
+    discrete_action: True
+    state_num: 4
   shared_params: None
 optim:
   name: es_openai
-  population_size: 100
+  population_size: 150
   maximization: True
   generation_num: 500
   input_running_mean_std: False
