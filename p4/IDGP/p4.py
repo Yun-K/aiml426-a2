@@ -29,7 +29,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('path')
 args = parser.parse_args()
 user_input_arg_f1_or_f2 = args.path
-if user_input_arg_f1_or_f2  not in ["f1" , "f2"]:
+if user_input_arg_f1_or_f2 not in ["f1" , "f2"] or user_input_arg_f1_or_f2  == None:
     raise ValueError("Please input f1 or f2")
 
 
@@ -118,7 +118,6 @@ def evalTrain(individual):
     train_norm = min_max_scaler.fit_transform(np.asarray(train_tf))
     # lsvm = LinearSVC(max_iter=2000)
     clf = LinearSVC(random_state=randomSeeds, tol=1e-5, max_iter=2000)
-    
     accuracy = round(100 * cross_val_score(clf,
                      train_norm, y_train, cv=3).mean(), 2)
     return accuracy,
@@ -219,12 +218,6 @@ if __name__ == "__main__":
     graph.draw(f"tree_{user_input_arg_f1_or_f2}.pdf")
     graph.write(f"tree_{user_input_arg_f1_or_f2}.dot")
     
-    
-    #    	      	                    fitness                    	                   size_tree
-    #    	      	-----------------------------------------------	-----------------------------------------------
-    # gen	nevals	avg    	gen	max  	min  	nevals	std    	avg 	gen	max	min	nevals	std
-    # 0  	100   	67.5665	0  	95.33	39.33	100   	19.0403	7.51	0  	46 	2  	100   	7.43034
-
     # then generate 2 csv files for the results
     def generate_pattern_csv(individual, x, y, output_name):
         # Transform the tree expression in a callable function
@@ -244,10 +237,6 @@ if __name__ == "__main__":
         # check if the pattern file is correctly saved
         df = pd.read_csv(f"{output_name}.csv")
         
-
-    # generate_pattern_csv(hof[0], toolbox, x_train, y_train, f"{dataset_prefix_path}/train_{user_input_arg_f1_or_f2}")
-    # generate_pattern_csv(hof[0], toolbox, x_test, y_test, f"{dataset_prefix_path}/test_{user_input_arg_f1_or_f2}")
-    
     generate_pattern_csv(hof[0], x_train, y_train, f"train_{user_input_arg_f1_or_f2}")
     generate_pattern_csv(hof[0], x_test, y_test, f"test_{user_input_arg_f1_or_f2}")
     
@@ -258,6 +247,6 @@ if __name__ == "__main__":
     print('Test time  ', testTime)
     print('End')
     
-    # bwlow is for 4.2, it is included in the p4_2.py file
-    p4_2.image_classification_using_feature_extracted_by_GP()
+    # # bwlow is for 4.2, it is included in the p4_2.py file
+    # p4_2.image_classification_using_feature_extracted_by_GP()
 

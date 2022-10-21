@@ -39,7 +39,7 @@ def image_classification_using_feature_extracted_by_GP():
         print(f"train_X shape: {train_X.shape}")
         print(f"train_Y shape: {train_Y.shape}")
             
-        clf = LinearSVC(tol=1e-5, max_iter=2000)
+        clf = LinearSVC(max_iter=2000)
     
         clf.fit(train_X, train_Y)
         # use the cross validation to evaluate the model

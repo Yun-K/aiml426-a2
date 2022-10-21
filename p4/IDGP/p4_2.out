@@ -1,0 +1,20 @@
+--------------------------------------------------
+We are processing pattern file for f1 now
+--------------------
+train_data shape: (150, 130)
+train_X shape: (150, 129)
+train_Y shape: (150,)
+Train accuracy:
+cross validation score: [0.96666667 1.         0.96666667 0.96666667 0.9       ]
+cross validation mean score: 0.9600000000000002
+Test accuracy: 0.96
+--------------------------------------------------
+We are processing pattern file for f2 now
+--------------------
+train_data shape: (150, 1061)
+train_X shape: (150, 1060)
+train_Y shape: (150,)
+Train accuracy:
+cross validation score: [0.96666667 0.96666667 0.9        0.86666667 0.8       ]
+cross validation mean score: 0.9
+Test accuracy: 0.96

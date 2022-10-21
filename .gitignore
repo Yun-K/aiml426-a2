@@ -1,2 +1,5 @@
 # ignore cz directory 
 /cz/
+p5/env/
+p5/aiml/
+__pycache__
