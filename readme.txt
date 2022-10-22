@@ -49,12 +49,11 @@ They are tree_f1.pdf, tree_f2.pdf, train_f1.csv, train_f2.csv, test_f1.csv, test
 
 For part 5, I have configured the YAML file required by ZOO-RL, and the results are stored under the log directory. That is, p5/logs/CartPole-v1 directory. Please just look at the log directory. 
 
-For the draw
+You can run `python draw.py` to draw the learning performance curves from 5 independent algorithm.
+- 5 curves are also saved as .png for you to look at if you want. 
 
 
-
-
-If you still want to run, it is a bit complicated as you need to set up teh virtuiral environment and install the dependencies, which is inspired from https://www.freecodecamp.org/news/how-to-setup-virtual-environments-in-python/.
+If you want to run from 0, it is a bit complicated as you need to set up teh virtuiral environment and install the dependencies, which is inspired from https://www.freecodecamp.org/news/how-to-setup-virtual-environments-in-python/.
 
 Commands are : 
 - cd p5
@@ -64,3 +63,4 @@ Commands are :
 - pip freeze > requirements.txt
 - pip install -r requirements.txt
 - python3 run_rl.py --log --seed 3
+- python draw.py
