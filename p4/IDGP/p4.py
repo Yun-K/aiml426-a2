@@ -216,7 +216,7 @@ if __name__ == "__main__":
         n.attr["label"] = labels[i]
     # graph.draw(f"{dataset_prefix_path}/tree_{user_input_arg_f1_or_f2}.pdf")
     graph.draw(f"tree_{user_input_arg_f1_or_f2}.pdf")
-    graph.write(f"tree_{user_input_arg_f1_or_f2}.dot")
+    # graph.write(f"tree_{user_input_arg_f1_or_f2}.dot")
     
     # then generate 2 csv files for the results
     def generate_pattern_csv(individual, x, y, output_name):
